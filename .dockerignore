@@ -1,0 +1,12 @@
+.git
+.gitignore
+*.md
+*.txt
+*.sh
+*.bat
+*.py
+docker-compose.yml
+nginx.conf
+.dockerignore
+Dockerfile
+
