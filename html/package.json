@@ -1,0 +1,13 @@
+{
+  "name": "html-builder",
+  "version": "1.0.0",
+  "description": "Build HTML from partials",
+  "scripts": {
+    "build": "python3 build.py",
+    "build-node": "node build.js",
+    "watch": "python3 build.py && chokidar 'partials/**/*.html' 'templates/**/*.html' -c 'npm run build'"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0"
+  }
+}
