@@ -101795,9 +101795,6 @@ print {
 }
 
 @font-face {
-  font-family: "floating-menu-icons";
-  src: url(../fonts/floating-menu-icons.eot?7sktn);
-  src: url(../fonts/floating-menu-icons.eot?7sktn#iefix) format("embedded-opentype"), url(../fonts/floating-menu-icons.ttf?7sktn) format("truetype"), url(../fonts/floating-menu-icons.woff?7sktn) format("woff"), url(../fonts/floating-menu-icons.svg?7sktn#floating-menu-icons) format("svg");
   font-weight: 400;
   font-style: normal;
   font-display: block

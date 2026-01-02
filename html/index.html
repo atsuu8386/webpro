@@ -2588,495 +2588,36 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="wpb_column vc_column_container vc_col-sm-8">
+                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                             <div class="vc_column-inner ">
                                                 <div class="wpb_wrapper">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="vc_row-full-width vc_clearfix"></div>
-                                    <div data-vc-full-width="true" data-vc-full-width-temp="true"
-                                        data-vc-full-width-init="false" data-vc-stretch-content="true"
-                                        class="vc_row wpb_row vc_row-fluid vc_custom_1453109987955 vc_row-no-padding">
-                                        <div class="wpb_column vc_column_container vc_col-sm-12">
-                                            <div class="vc_column-inner ">
-                                                <div class="wpb_wrapper">
-                                                    <div id="map_691554032cbb3" class=" stm_gmap_wrapper"
-                                                        style="display: block;">
-                                                        <div style="display: block; height: 447px;"
-                                                            id="stm-gmap-691554032cbb2" class="stm_gmap"></div>
-                                                        <script type="text/javascript">
-                                                            jQuery(document).ready(function ($) {
-                                                                var map_691554032cbb3, markers = [], gmarkers = [], owl_691554032cbad = $("#owl_691554032cbad"), default_marker_icon = './images/map-marker-skin_default.png';
-                                                                $("#skin_color span").on('click', function () {
-                                                                    for (var i = 0; i < gmarkers.length; i++) {
-                                                                        if ($(this).attr('id') == 'skin_default') {
-                                                                            gmarkers[i].setIcon('./images/map-marker-skin_default.png');
-                                                                        } else {
-                                                                            gmarkers[i].setIcon('./images/map-marker-' + $(this).attr('id') + '.png');
-                                                                        }
-                                                                    }
-                                                                });
-                                                                function init() {
-                                                                    var mapStyles = [
-                                                                        {
-                                                                            "featureType": "administrative",
-                                                                            "elementType": "labels.text.fill",
-                                                                            "stylers": [
-                                                                                {
-                                                                                    "color": "#444444"
-                                                                                }
-                                                                            ]
-                                                                        },
-                                                                        {
-                                                                            "featureType": "landscape",
-                                                                            "elementType": "all",
-                                                                            "stylers": [
-                                                                                {
-                                                                                    "color": "#f2f2f2"
-                                                                                }
-                                                                            ]
-                                                                        },
-                                                                        {
-                                                                            "featureType": "poi",
-                                                                            "elementType": "all",
-                                                                            "stylers": [
-                                                                                {
-                                                                                    "visibility": "off"
-                                                                                }
-                                                                            ]
-                                                                        },
-                                                                        {
-                                                                            "featureType": "road",
-                                                                            "elementType": "all",
-                                                                            "stylers": [
-                                                                                {
-                                                                                    "saturation": -100
-                                                                                },
-                                                                                {
-                                                                                    "lightness": 45
-                                                                                }
-                                                                            ]
-                                                                        },
-                                                                        {
-                                                                            "featureType": "road.highway",
-                                                                            "elementType": "all",
-                                                                            "stylers": [
-                                                                                {
-                                                                                    "visibility": "simplified"
-                                                                                }
-                                                                            ]
-                                                                        },
-                                                                        {
-                                                                            "featureType": "road.arterial",
-                                                                            "elementType": "labels.icon",
-                                                                            "stylers": [
-                                                                                {
-                                                                                    "visibility": "off"
-                                                                                }
-                                                                            ]
-                                                                        },
-                                                                        {
-                                                                            "featureType": "transit",
-                                                                            "elementType": "all",
-                                                                            "stylers": [
-                                                                                {
-                                                                                    "visibility": "off"
-                                                                                }
-                                                                            ]
-                                                                        },
-                                                                        {
-                                                                            "featureType": "water",
-                                                                            "elementType": "all",
-                                                                            "stylers": [
-                                                                                {
-                                                                                    "color": "#6c98e1"
-                                                                                },
-                                                                                {
-                                                                                    "visibility": "on"
-                                                                                }
-                                                                            ]
-                                                                        }
-                                                                    ];
-
-
-                                                                    var mapOptions = {
-                                                                        zoom: 11,
-                                                                        zoomControlOptions: {
-                                                                            position: google.maps.ControlPosition.LEFT_TOP
-                                                                        },
-                                                                        streetViewControl: false,
-                                                                        scrollwheel: false,
-                                                                        styles: mapStyles
-
-                                                                    };
-                                                                    var mapElement = document.getElementById('stm-gmap-691554032cbb2');
-                                                                    map_691554032cbb3 = new google.maps.Map(mapElement, mapOptions);
-
-                                                                    owl_691554032cbad.on('initialized.owl.carousel', function () {
-                                                                        consulting_setMarkers();
-                                                                    });
-
-                                                                    var owlRtl = false;
-
-                                                                    if ($('body').hasClass('rtl')) {
-                                                                        owlRtl = true;
-                                                                    }
-
-                                                                    owl_691554032cbad.owlCarousel({
-                                                                        rtl: owlRtl,
-                                                                        dotsContainer: '#owl-nav-691554032cbb1',
-                                                                        items: 3,
-                                                                        margin: 70,
-                                                                        loop: true,
-                                                                        responsive: {
-                                                                            0: {
-                                                                                items: 1
-                                                                            },
-                                                                            768: {
-                                                                                items: 2
-                                                                            },
-                                                                            992: {
-                                                                                items: 3
-                                                                            }
-                                                                        },
-                                                                        onTranslated: function () {
-                                                                            consulting_setMarkers();
-                                                                        },
-                                                                        onInitialize: function (event) {
-                                                                            if ($('.owl-stage-outer .owl-item').length <= 1) {
-                                                                                this.settings.loop = false;
-                                                                            }
-                                                                        }
-                                                                    });
-                                                                }
-                                                                init();
-                                                                function consulting_setMarkers() {
-                                                                    var latlngbounds = new google.maps.LatLngBounds();
-                                                                    markers = [];
-                                                                    owl_691554032cbad.find('.owl-item.active').each(function (i) {
-                                                                        markers.push([parseFloat($(this).find('.item').data('lat')), parseFloat($(this).find('.item').data('lng')), $(this).find('.item').data('title')]);
-                                                                    });
-                                                                    for (i = 0; i < gmarkers.length; i++) {
-                                                                        gmarkers[i].setMap(null);
-                                                                    }
-                                                                    for (var i = 0; i < markers.length; i++) {
-                                                                        var marker_array = markers[i];
-                                                                        marker = new google.maps.Marker({
-                                                                            position: { lat: marker_array[0], lng: marker_array[1] },
-                                                                            icon: default_marker_icon,
-                                                                            map: map_691554032cbb3,
-                                                                            title: marker_array[2]
-                                                                        });
-                                                                        latlngbounds.extend(new google.maps.LatLng(marker_array[0], marker_array[1]));
-                                                                        gmarkers.push(marker);
-                                                                        addInfoWindow(marker, marker_array[2], marker_array[0]);
-                                                                    }
-                                                                    map_691554032cbb3.fitBounds(latlngbounds);
-
-                                                                    if (markers.length === 1) {
-                                                                        var listener = google.maps.event.addListener(map_691554032cbb3, "idle", function () {
-                                                                            map_691554032cbb3.setZoom(11);
-                                                                            google.maps.event.removeListener(listener);
-                                                                        });
-                                                                    }
-                                                                }
-
-                                                                function addInfoWindow(marker, title, lat) {
-
-                                                                    var infowindow = new google.maps.InfoWindow({
-                                                                        content: '<h6>' + title + '</h6>',
-                                                                        pixelOffset: new google.maps.Size(0, 20)
-                                                                    });
-
-                                                                    google.maps.event.addListener(marker, 'mouseover', function () {
-                                                                        setTimeout(() => {
-                                                                            infowindow.open(map_691554032cbb3, marker);
-                                                                            $('[data-lat="' + lat + '"]').addClass("focused");
-                                                                        }, 70);
-                                                                    });
-
-                                                                    google.maps.event.addListener(marker, 'mouseout', function () {
-                                                                        setTimeout(() => {
-                                                                            infowindow.close(map_691554032cbb3, marker);
-                                                                            $('[data-lat="' + lat + '"]').removeClass("focused");
-                                                                        }, 150);
-                                                                    });
-
-                                                                    $(".item").on("mouseenter", function () {
-                                                                        if (parseFloat(marker.getPosition().lat()) === parseFloat($(this).data('lat'))) {
-                                                                            setTimeout(() => {
-                                                                                infowindow.open(map_691554032cbb3, marker);
-                                                                            }, 70);
-                                                                        }
-                                                                    });
-
-                                                                    $(".item").on("mouseleave", function () {
-                                                                        if (parseFloat(marker.getPosition().lat()) === parseFloat($(this).data('lat'))) {
-                                                                            setTimeout(() => {
-                                                                                infowindow.close(map_691554032cbb3, marker);
-                                                                            }, 150);
-                                                                        }
-                                                                    });
-                                                                }
-                                                            });
-                                                        </script>
-                                                        <div class="gmap_addresses">
-                                                            <div class="container">
-                                                                <div class="row">
-                                                                    <div
-                                                                        class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
-                                                                        <div class="addresses_wr">
-                                                                            <div class="addresses"
-                                                                                id="owl_691554032cbad">
-
-                                                                                <div class="item"
-                                                                                    style="display: inline-block;"
-                                                                                    data-lat="51.507351"
-                                                                                    data-lng="-0.127758"
-                                                                                    data-title="United Kingdom">
-                                                                                    <div class="title">United Kingdom
-                                                                                    </div>
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-location-2"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>14 Tottenham Road, N1
-                                                                                                    4EP, London, United
-                                                                                                    Kingdom</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-iphone"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>+1 212-226-3126</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-email"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <a
-                                                                                                    href="https://consulting.stylemixthemes.com/cdn-cgi/l/email-protection#a4cc82879594959fc582879594949f828792909f82879d9d9fcbca82879595919fd1828795949c9f82879595929f82879594919fca82879594979fd3d48ac7cb828795949d9f">hea&#100;&#64;co&#110;s&#117;&#108;&#116;ingwp&#46;c&#111;&#109;</a>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                                <div class="item"
-                                                                                    style="display: inline-block;"
-                                                                                    data-lat="52.520007"
-                                                                                    data-lng="13.404954"
-                                                                                    data-title="Germany">
-                                                                                    <div class="title">Germany</div>
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-location-2"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>148 Commercity Isola
-                                                                                                    Road, M1 R43 Berlin,
-                                                                                                    Germany</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-iphone"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>+3 864-784-4848</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-email"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <a
-                                                                                                    href="https://consulting.stylemixthemes.com/cdn-cgi/l/email-protection#5177726060646a302577726061606a3d3d77726061646a2534777267656a777268686a77726060606a3f77726060646a243d77726060676a77726061646a3f77726061626a2677726060636a7f777268686a77726060606a3c">&#115;&#97;&#116;&#101;llit&#101;&#64;&#99;&#111;&#110;sul&#116;&#105;ngwp.&#99;&#111;m</a>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                                <div class="item"
-                                                                                    style="display: inline-block;"
-                                                                                    data-lat="40.416775"
-                                                                                    data-lng="-3.703790"
-                                                                                    data-title="Spain">
-                                                                                    <div class="title">Spain</div>
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-location-2"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>10 Via Della
-                                                                                                    Consordia Road, S3
-                                                                                                    7ME Madrid, Spain
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-iphone"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>+1 212-226-3126</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-email"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <a
-                                                                                                    href="https://consulting.stylemixthemes.com/cdn-cgi/l/email-protection#0f292c3e3e3d346e6362292c363834292c3e3f3c34292c3e3f3e34292c3e3e3f346c292c3e3d3e34292c393b346c6061292c3e3e3a347a637b666168787f292c3b3934292c36363460292c3e3f3634">&#112;&#97;&#108;&#109;&#97;&#103;&#101;ncy&#64;&#99;o&#110;&#115;ult&#105;&#110;&#103;&#119;&#112;.&#99;&#111;m</a>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                                <div class="item"
-                                                                                    style="display: inline-block;"
-                                                                                    data-lat="34.052234"
-                                                                                    data-lng="-118.243685"
-                                                                                    data-title="Head Quarter">
-                                                                                    <div class="title">Head Quarter
-                                                                                    </div>
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-location-2"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>14 Mao Road, N1 4EP,
-                                                                                                    Los Angelos, USA</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-iphone"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>+1 212-226-3126</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-email"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <a
-                                                                                                    href="https://consulting.stylemixthemes.com/cdn-cgi/l/email-protection#533b3675706a6468377570656768303c75706262636820757062626468757062636b687570626265683a757062626368757062636068757062626a68237570676568307570626262683e">he&#97;&#100;&#64;&#99;ons&#117;l&#116;&#105;ng&#119;p&#46;c&#111;m</a>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                                <div class="item"
-                                                                                    style="display: inline-block;"
-                                                                                    data-lat="40.712784"
-                                                                                    data-lng="-74.005941"
-                                                                                    data-title="United States">
-                                                                                    <div class="title">United States
-                                                                                    </div>
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-location-2"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>148 Commercity Isola
-                                                                                                    Road, M1 R43 New
-                                                                                                    York, USA</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-iphone"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>+3 864-784-4848</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-email"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <a
-                                                                                                    href="https://consulting.stylemixthemes.com/cdn-cgi/l/email-protection#91b7b2a0a0a4aab7b2a8a6aab7b2a0a0a7aaf4fdb7b2a0a1a9aab7b2a0a1a4aae5b7b2a0a1a0aab7b2a7a5aab7b2a8a8aab7b2a0a0a0aab7b2a0a0a1aab7b2a0a0a4aab7b2a0a0a6aafde5f8fff6e6e1bff2feb7b2a0a1a8aa">&#115;ate&#108;&#108;i&#116;e&#64;&#99;o&#110;s&#117;&#108;&#116;&#105;&#110;&#103;&#119;p&#46;c&#111;&#109;</a>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                                <div class="item"
-                                                                                    style="display: inline-block;"
-                                                                                    data-lat="25.761680"
-                                                                                    data-lng="-80.191790"
-                                                                                    data-title="Sales Office">
-                                                                                    <div class="title">Sales Office
-                                                                                    </div>
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-location-2"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>10 Via Della
-                                                                                                    Consordia Road, S3
-                                                                                                    7ME Miami, USA</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-iphone"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <p>+1 212-226-3126</p>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <div class="icon">
-                                                                                                <i
-                                                                                                    class="stm-email"></i>
-                                                                                            </div>
-                                                                                            <div class="text">
-                                                                                                <a
-                                                                                                    href="https://consulting.stylemixthemes.com/cdn-cgi/l/email-protection#4462677575717f252862677574757f37626772707f2762677575757f62677575747f3731626775747c7f62677575727f2d2a62677574777f3362677575767f626770727f272b626775747d7f">&#115;al&#101;&#115;&#64;&#99;&#111;n&#115;&#117;lt&#105;n&#103;wp&#46;com</a>
-                                                                                            </div>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="owl-dots-wr">
-                                                                        <div class="owl-dots"
-                                                                            id="owl-nav-691554032cbb1"></div>
-                                                                    </div>
-                                                                </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <div class="input-group">
+                                                                <span class="wpcf7-form-control-wrap" data-name="services_consulting">
+                                                                    <select class="wpcf7-form-control wpcf7-select select2-hidden-accessible" aria-invalid="false" name="services_consulting" tabindex="-1" aria-hidden="true">
+                                                                        <option value="">Business Planning</option>
+                                                                        <option value="Audit &amp; Assurance">Audit &amp; Assurance</option>
+                                                                        <option value="Strategic Planning">Strategic Planning</option>
+                                                                        <option value="Trades &amp; Stocks">Trades &amp; Stocks</option>
+                                                                        <option value="Financial Projections">Financial Projections</option>
+                                                                    </select>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <div class="input-group">
+                                                                <span class="wpcf7-form-control-wrap" data-name="text-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="First name" value="" type="text" name="text-name"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <div class="input-group">
+                                                                <span class="wpcf7-form-control-wrap" data-name="phone"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Phone number" value="" type="tel" name="phone"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                            <div class="input-group">
+                                                                <button type="submit" class="button size-lg icon_right">submit <i class="fa fa-chevron-right"></i></button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3084,6 +2625,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="vc_row-full-width vc_clearfix"></div>
                                     <div class="vc_row-full-width vc_clearfix"></div>
                                 </div>
                             </div>
@@ -4097,30 +3639,20 @@
     </style>
     <script type="text/javascript" src="js/hooks.min.js" id="wp-hooks-js"></script>
     <script type="text/javascript" src="js/i18n.min.js" id="wp-i18n-js"></script>
-    <script type="text/javascript" id="wp-i18n-js-after">
-        /* <![CDATA[ */
-        wp.i18n.setLocaleData({ 'text direction\u0004ltr': ['ltr'] });
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="js/autoptimize_single_efc27e253fae1b7b891fb5a40e687768.js" id="swv-js"></script>
-    <script type="text/javascript" src="js/autoptimize_single_0b1719adf5fa7231cb1a1b54cf11a50e.js"
         id="contact-form-7-js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js" id="bootstrap-js"></script>
     <script type="text/javascript" src="js/select2.full.min.js" id="select2-js" defer="defer"
         data-wp-strategy="defer"></script>
     <script type="text/javascript" src="js/autoptimize_single_5614ce1778e72dfa798c4e1f0c99a0a0.js"
         id="consulting-custom-js" defer="defer" data-wp-strategy="defer"></script>
-    <script type="text/javascript" src="js/autoptimize_single_d764e7ba43bdec7cd1cac12afdc8184b.js" id="stm_megamenu-js"
-        defer="defer" data-wp-strategy="defer"></script>
     <script type="text/javascript" src="js/js_composer_front.min.js" id="wpb_composer_front_js-js"></script>
     <script type="text/javascript" src="js/slick.min.js" id="slick-js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js" id="owl.carousel-js"></script>
 
     <script type="text/javascript" src="js/jquery.cookie.min.js" id="jquery.cookie-js" defer="defer"
         data-wp-strategy="defer"></script>
-    <script type="text/javascript" defer src="js/autoptimize_single_0d7f6b4930df680c368db0d604444b39.js"
-        id="mc4wp-forms-api-js"></script>
-    <script></script>
+    <!-- <script type="text/javascript" defer src="js/autoptimize_single_0d7f6b4930df680c368db0d604444b39.js"
+        id="mc4wp-forms-api-js"></script> -->
     <script id="rs-initialisation-scripts">
         var tpj = jQuery;
 
