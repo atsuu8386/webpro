@@ -1,87 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
-
-<!-- Mirrored from consulting.stylemixthemes.com/twelve/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jan 2026 12:32:45 GMT -->
-<!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-
 
 <!-- include:partials/head.html -->
 
 <body
     class="home page-template-default page theme-consultingsite_layout_12 sticky_menu default_header_builder header_style_1 boxed_layout bg_img_4 mobile_grid_landscape vc_sidebar_page wpb-js-composer js-comp-ver-8.6.1 vc_responsive elementor-default elementor-kit-7195">
     <div id="wrapper">
-        <script type="text/javascript">
-            document.addEventListener('DOMContentLoaded', function () {
-                function getTimeRemaining(endtime) {
-                    const total = Date.parse(endtime) - Date.parse(new Date());
-                    const seconds = Math.floor((total / 1000) % 60);
-                    const minutes = Math.floor((total / 1000 / 60) % 60);
-                    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-                    const days = Math.floor(total / (1000 * 60 * 60 * 24));
-
-                    return { total, days, hours, minutes, seconds };
-                }
-
-                function initializeClock(id, endtime) {
-                    const clock = document.getElementById(id);
-                    const daysSpan = clock.querySelector('.days strong');
-                    const hoursSpan = clock.querySelector('.hours strong');
-                    const minutesSpan = clock.querySelector('.minutes strong');
-                    const secondsSpan = clock.querySelector('.seconds strong');
-                    const saleBar = document.getElementById('envato-sale-bar');
-                    function updateClock() {
-                        const t = getTimeRemaining(endtime);
-
-                        if (daysSpan) daysSpan.textContent = t.days;
-                        if (hoursSpan) hoursSpan.textContent = ('0' + t.hours).slice(-2);
-                        if (minutesSpan) minutesSpan.textContent = ('0' + t.minutes).slice(-2);
-                        if (secondsSpan) secondsSpan.textContent = ('0' + t.seconds).slice(-2);
-
-                        if (t.total <= 0) {
-                            clearInterval(timeinterval);
-                            if (saleBar) {
-                                saleBar.remove();
-                            }
-                        }
-                    }
-                    updateClock();
-                    const timeinterval = setInterval(updateClock, 1000);
-                }
-
-                const currentMoment = Date.parse(new Date());
-                const startDate = Date.parse('2024-11-18T00:00:00Z');
-                const deadline = Date.parse('2024-12-03T23:59:00Z');
-                if (currentMoment > startDate && currentMoment < deadline) {
-                    initializeClock('countdowndiv', new Date(deadline));
-                } else {
-                    const saleBar = document.getElementById('envato-sale-bar');
-                    if (saleBar) {
-                        saleBar.remove();
-                    }
-                }
-            });
-        </script>
-        <script type="text/javascript">
-            (function ($) {
-                $(document).ready(function () {
-
-                    var api_url = 'https://stylemixthemes.com/api/prices.json';
-
-                    $.ajax({
-                        url: api_url,
-                        dataType: 'json',
-                        context: this,
-                        complete: function (data) {
-                            var r = data.responseJSON;
-                            $('#stm_price_api').text(r.themes.consulting.price);
-
-                        }
-                    });
-
-                })
-            })(jQuery);
-        </script>
         <div id="fullpage" class="content_wrapper">
 
             <!-- include:partials/header.html -->

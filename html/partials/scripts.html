@@ -830,21 +830,20 @@
     <script>
         if (typeof revslider_showDoubleJqueryError === "undefined") { function revslider_showDoubleJqueryError(sliderID) { console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion."); console.log("To fix this, you can:"); console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on"); console.log("2. Find the double jQuery.js inclusion and remove it"); return "Double Included jQuery Library"; } }
     </script>
-    <link rel="preload" as="font" id="rs-icon-set-fa-icon-woff" type="font/woff2" crossorigin="anonymous"
-        href="./fonts/fontawesome-webfont.woff2?v=4.7.0" media="all" />
 
-    <style id='rs-plugin-settings-inline-css' type='text/css'>
-        #rs-demo-id {}
-    </style>
-    <script type="text/javascript" src="js/hooks.min.js" id="wp-hooks-js"></script>
-    <script type="text/javascript" src="js/i18n.min.js" id="wp-i18n-js"></script>
+
     <script type="text/javascript" src="js/bootstrap.min.js" id="bootstrap-js"></script>
     <script type="text/javascript" src="js/select2.full.min.js" id="select2-js" defer="defer"
         data-wp-strategy="defer"></script>
+        <!-- JS for show goal.html-->
     <script type="text/javascript" src="js/autoptimize_single_5614ce1778e72dfa798c4e1f0c99a0a0.js"
         id="consulting-custom-js" defer="defer" data-wp-strategy="defer"></script>
+
     <script type="text/javascript" src="js/js_composer_front.min.js" id="wpb_composer_front_js-js"></script>
+
+    <!-- js for show testimonials.html-->
     <script type="text/javascript" src="js/slick.min.js" id="slick-js"></script>
+
     <script type="text/javascript" src="js/owl.carousel.min.js" id="owl.carousel-js"></script>
 
     <script type="text/javascript" src="js/jquery.cookie.min.js" id="jquery.cookie-js" defer="defer"
@@ -887,6 +886,8 @@
                     fallbacks: {
                         allowHTML5AutoPlayOnAndroid: true
                     },
+                    // Disable animation library loading to prevent 405 error
+                    disableAnimationLibrary: true,
                 });
 
             }
