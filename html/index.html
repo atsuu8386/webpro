@@ -381,24 +381,24 @@
                     }
                     return;
                 }
-                
+
                 var originalAjax = jQuery.ajax;
                 var originalPost = jQuery.post;
-                
+
                 // Override jQuery.ajax
                 jQuery.ajax = function(options) {
                     // Normalize options
                     if (typeof options === 'string') {
                         options = { url: options, type: 'GET' };
                     }
-                    
+
                     var url = (options && options.url) ? String(options.url) : '';
                     var method = (options && (options.type || options.method)) ? String(options.type || options.method).toUpperCase() : 'GET';
-                    
+
                     // Bỏ qua POST request đến root path (thường là từ Revolution Slider)
                     if (method === 'POST' && (
-                        url === '/' || 
-                        url === '' || 
+                        url === '/' ||
+                        url === '' ||
                         url === window.location.origin + '/' ||
                         url === window.location.href ||
                         url.indexOf(window.location.origin + '/') === 0 && url.split('?')[0] === window.location.origin + '/' ||
@@ -411,12 +411,12 @@
                     }
                     return originalAjax.apply(this, arguments);
                 };
-                
+
                 // Override jQuery.post
                 jQuery.post = function(url, data, success, dataType) {
                     var urlStr = String(url || '');
-                    if (urlStr === '/' || 
-                        urlStr === '' || 
+                    if (urlStr === '/' ||
+                        urlStr === '' ||
                         urlStr === window.location.origin + '/' ||
                         urlStr === window.location.href ||
                         urlStr.indexOf('loadSlideAnimLibrary') !== -1) {
@@ -430,10 +430,10 @@
                     }
                     return originalPost.apply(this, arguments);
                 };
-                
+
                 console.log('Revolution Slider 405 fix: Ajax interceptor installed');
             };
-            
+
             // Chạy ngay lập tức
             setupInterceptor();
         })();
@@ -3259,12 +3259,11 @@
         if (typeof revslider_showDoubleJqueryError === "undefined") { function revslider_showDoubleJqueryError(sliderID) { console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion."); console.log("To fix this, you can:"); console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on"); console.log("2. Find the double jQuery.js inclusion and remove it"); return "Double Included jQuery Library"; } }
     </script>
 
-
     <script type="text/javascript" src="js/bootstrap.min.js" id="bootstrap-js"></script>
     <script type="text/javascript" src="js/select2.full.min.js" id="select2-js" defer="defer"
         data-wp-strategy="defer"></script>
         <!-- JS for show goal.html-->
-    <script type="text/javascript" src="js/autoptimize_single_5614ce1778e72dfa798c4e1f0c99a0a0.js"
+    <script type="text/javascript" src="js/goal.js"
         id="consulting-custom-js" defer="defer" data-wp-strategy="defer"></script>
 
     <script type="text/javascript" src="js/js_composer_front.min.js" id="wpb_composer_front_js-js"></script>
@@ -3276,8 +3275,6 @@
 
     <script type="text/javascript" src="js/jquery.cookie.min.js" id="jquery.cookie-js" defer="defer"
         data-wp-strategy="defer"></script>
-    <!-- <script type="text/javascript" defer src="js/autoptimize_single_0d7f6b4930df680c368db0d604444b39.js"
-        id="mc4wp-forms-api-js"></script> -->
     <script id="rs-initialisation-scripts">
         var tpj = jQuery;
 
