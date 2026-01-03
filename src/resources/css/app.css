@@ -1,0 +1,49 @@
+/* Tabler Core CSS (includes Bootstrap) */
+@import '@tabler/core/dist/css/tabler.min.css';
+@import '@tabler/core/dist/css/tabler-flags.min.css';
+@import '@tabler/core/dist/css/tabler-payments.min.css';
+@import '@tabler/core/dist/css/tabler-vendors.min.css';
+@import '@tabler/icons-webfont/dist/tabler-icons.min.css';
+
+/* Tabler Themes */
+@import './themes.css';
+@import url("https://rsms.me/inter/inter.css");
+/* Custom styles */
+/* :root {
+  --tblr-body-bg: #f5f7fb;
+} */
+
+.orderflow-brand {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  user-select: none;
+}
+
+.orderflow-logo {
+  width: 36px;
+  height: 36px;
+}
+
+.orderflow-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1e293b; /* slate-800 */
+}
+
+.orderflow-text span {
+  color: #2563eb; /* primary blue */
+  font-weight: 800;
+}
+[data-bs-theme=dark] {
+  .orderflow-text {
+    color: #fcfcfc;
+  }
+}
+/* Hover effect (optional) */
+.orderflow-brand:hover .orderflow-text {
+  color: #0f172a;
+}
+
+.orderflow-brand:hover .orderflow-text span {
+  color: #1d4ed8;
+}

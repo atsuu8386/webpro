@@ -1,0 +1,1 @@
+import{a as e}from"./vendor-B9ygI19o.js";e.defaults.headers.common["X-Requested-With"]="XMLHttpRequest";function o(){const t=document.head.querySelector('meta[name="csrf-token"]');t?(e.defaults.headers.common["X-CSRF-TOKEN"]=t.content,window.axios=e):console.error("CSRF token not found")}o();document.readyState==="loading"?document.addEventListener("DOMContentLoaded",o):o();

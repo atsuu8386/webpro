@@ -1,0 +1,13 @@
+/* Web site styles */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.features-section {
+    background-color: #f8f9fa;
+}
+
+.site-footer {
+    margin-top: auto;
+}
