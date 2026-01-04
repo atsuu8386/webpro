@@ -1,0 +1,33 @@
+ul.footer_address {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.footer_address li {
+    color: rgba(255, 255, 255, .5);
+    margin: 0 0 14px;
+    transition: color .3s ease;
+}
+
+ul.footer_address li .icon {
+    float: left;
+    width: 16px;
+    line-height: 20px;
+    font-size: 16px;
+    margin-right: 14px;
+    text-align: center;
+    color: rgba(253, 228, 40, .5);
+    transition: color .3s ease;
+}
+
+ul.footer_address li .icon .stm-email {
+    font-size: 12px;
+    padding: 2px 0 0;
+}
+footer .company_info:hover ul li {
+    color: #fff;
+}
+footer .company_info:hover ul li .icon {
+    color: #fde428;
+}

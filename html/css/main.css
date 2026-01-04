@@ -32481,7 +32481,6 @@ div [class^=stm-header] div {
 
 #footer .widgets_row .footer_text {
   color: #fff;
-  opacity: .5;
   margin: 0 0 40px
 }
 
@@ -60805,7 +60804,7 @@ body.header_style_5 .header_top .info-text b,
 .widget.widget_rss ul li,
 .widget.widget_recent_entries ul li a,
 .post_links_box.style_3 .post_link_text {
-  /* font-family: Rubik, Arial; */
+  font-family: Rubik, Arial;
   font-style: normal
 }
 
