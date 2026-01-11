@@ -875,7 +875,7 @@
 
 .consulting_portfolio_box .consulting_portfolio_grid.style_3 .portfolio_item .portfolio_link .portfolio_item_thumbnail img {
     width: 100%;
-    height: 280px;
+    height: 186px;
     -o-object-fit: cover;
     object-fit: cover;
     transition: .3s

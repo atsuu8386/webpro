@@ -31,3 +31,25 @@ footer .company_info:hover ul li {
 footer .company_info:hover ul li .icon {
     color: #fde428;
 }
+.support-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    margin: 20px 15px;
+    border-radius: 4px;
+    z-index: 99999;
+}
+.support-button ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.support-button ul li {
+    padding: 5px;
+}
+.support-button ul li a img {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
