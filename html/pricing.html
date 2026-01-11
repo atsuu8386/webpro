@@ -683,675 +683,366 @@
             <article class="page">
                 <div class="entry-content">
                     <div class="wpb-content-wrapper">
-                        <script>
-    function setREVStartSize(e) {
-        //window.requestAnimationFrame(function() {
-        window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
-        window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
-        try {
-            var pw = document.getElementById(e.c).parentNode.offsetWidth,
-                newh;
-            pw = pw === 0 || isNaN(pw) || (e.l == "fullwidth" || e.layout == "fullwidth") ? window.RSIW : pw;
-            e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
-            e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
-            e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
-            e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
-            e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
-            e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
-            e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
-            if (e.layout === "fullscreen" || e.l === "fullscreen")
-                newh = Math.max(e.mh, window.RSIH);
-            else {
-                e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
-                for (var i in e.rl) if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
-                e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
-                e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
-                for (var i in e.rl) if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
-
-                var nl = new Array(e.rl.length),
-                    ix = 0,
-                    sl;
-                e.tabw = e.tabhide >= pw ? 0 : e.tabw;
-                e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
-                e.tabh = e.tabhide >= pw ? 0 : e.tabh;
-                e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
-                for (var i in e.rl) nl[i] = e.rl[i] < window.RSIW ? 0 : e.rl[i];
-                sl = nl[0];
-                for (var i in nl) if (sl > nl[i] && nl[i] > 0) { sl = nl[i]; ix = i; }
-                var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
-                newh = (e.gh[ix] * m) + (e.tabh + e.thumbh);
-            }
-            var el = document.getElementById(e.c);
-            if (el !== null && el) el.style.height = newh + "px";
-            el = document.getElementById(e.c + "_wrapper");
-            if (el !== null && el) {
-                el.style.height = newh + "px";
-                el.style.display = "block";
-            }
-        } catch (e) {
-            console.log("Failure at Presize of Slider:" + e)
-        }
-        //});
-    };
-</script>
-
-<div class="vc_row wpb_row vc_row-fluid vc_custom_1464852884508">
-    <div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs">
-        <div class="vc_column-inner vc_custom_1465465510777">
+                        <div class="vc_row wpb_row vc_row-fluid">
+    <div class="wpb_column vc_column_container vc_col-sm-2">
+        <div class="vc_column-inner ">
+            <div class="wpb_wrapper"></div>
+        </div>
+    </div>
+    <div class="wpb_column vc_column_container vc_col-sm-8">
+        <div class="vc_column-inner ">
             <div class="wpb_wrapper">
-                <div class="wpb_revslider_element wpb_content_element">
-                    <!-- START Main Slider REVOLUTION SLIDER 6.7.16 -->
-                    <p class="rs-p-wp-fix"></p>
-                    <rs-module-wrap
-                        id="rev_slider_1_1_wrapper"
-                        data-source="gallery"
-                        style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;"
-                    >
-                        <rs-module
-                            id="rev_slider_1_1"
-                            style=""
-                            data-version="6.7.16"
-                        >
-                            <rs-slides
-                                style="overflow: hidden; position: absolute;"
-                            >
-                                <rs-slide
-                                    style="position: absolute;"
-                                    data-key="rs-2"
-                                    data-title="Slide"
-                                    data-duration="5000"
-                                    data-anim="d:20;p:dark;f:slidebased;"
-                                    data-in="prst:rndany;o:0;x:(15%);sx:0.8;sy:0.8;e:power2.out;row:5;col:5;"
-                                    data-out="o:0;x:(-15%);sx:0.8;sy:0.8;e:power2.in;row:5;col:5;"
-                                >
-                                    <img
-                                        decoding="async"
-                                        src="/images/dummy.png"
-                                        alt="Slide"
-                                        title="home"
-                                        class="rev-slidebg tp-rs-img rs-lazyload"
-                                        data-lazyload="./images/transparent.png"
-                                        data-bg="p:center top;c:#e5e8ed;"
-                                        data-no-retina
-                                    />
-                                    <!--
---><rs-layer
-                                        id="slider-1-slide-2-layer-8"
-                                        data-type="image"
-                                        data-rsp_ch="on"
-                                        data-xy="y:b;yo:-129px;"
-                                        data-text="l:22;a:inherit;"
-                                        data-dim="w:1229px;h:553px;"
-                                        data-frame_0="y:50px;tp:600;"
-                                        data-frame_1="tp:600;e:power1.inOut;st:2600;sp:510;sR:2600;"
-                                        data-frame_999="o:0;tp:600;e:nothing;st:w;sR:1890;"
-                                        style="z-index:5;"
-                                        ><img
-                                            fetchpriority="high"
-                                            decoding="async"
-                                            src="/images/dummy.png"
-                                            alt=""
-                                            class="tp-rs-img rs-lazyload"
-                                            width="1229"
-                                            height="553"
-                                            data-lazyload="/images/slide1.png"
-                                            data-no-retina
-                                        /> </rs-layer
-                                    ><!--
+                <div class="stm-spacing" id="stm-spacing-6902586f34925" style="height: 100px;"></div>
+                <script>
+                    (function ($) {
+                        "use strict";
+                        var spacingID = 'stm-spacing-6902586f34925',
+                            lgSpacing = '100',
+                            mdSpacing = '100',
+                            smSpacing = '70',
+                            xsSpacing = '70';
 
---><rs-layer
-                                        id="slider-1-slide-2-layer-1"
-                                        data-type="text"
-                                        data-color="rgba(0,46,91,1)"
-                                        data-rsp_ch="on"
-                                        data-xy="x:c;xo:11px;y:c;yo:-63px;"
-                                        data-text="l:22;a:center;"
-                                        data-frame_0="y:50px;tp:600;"
-                                        data-frame_1="tp:600;e:power1.inOut;st:1500;sp:500;sR:1500;"
-                                        data-frame_999="o:0;tp:600;e:nothing;st:w;sR:3000;"
-                                        style="z-index:6;font-family:'';"
-                                    >
-                                        <div class="consulting-rev-title-2">
-                                            Giải pháp website đáng tin cậy cho
-                                            doanh nghiệp
-                                        </div> </rs-layer
-                                    ><!--
+                        function stmSpacing() {
+                            if (window.matchMedia("(min-width: 1200px)").matches && lgSpacing) {
+                                $('#' + spacingID).css("height", lgSpacing);
+                            } else if (window.matchMedia("(max-width: 1199px) and (min-width: 992px )").matches && mdSpacing) {
+                                $('#' + spacingID).css("height", mdSpacing);
+                            } else if (window.matchMedia("(max-width: 991px) and (min-width: 768px )").matches && smSpacing) {
+                                $('#' + spacingID).css("height", smSpacing);
+                            } else if (window.matchMedia("(max-width: 767px)").matches && xsSpacing) {
+                                $('#' + spacingID).css("height", xsSpacing);
+                            } else {
+                                $('#' + spacingID).css("height", "");
+                            }
+                        }
 
---><rs-layer
-                                        id="slider-1-slide-2-layer-4"
-                                        data-type="text"
-                                        data-color="rgba(255,255,255,1)"
-                                        data-rsp_ch="on"
-                                        data-xy="x:c;xo:17px;y:c;yo:12px;"
-                                        data-text="l:22;"
-                                        data-frame_0="y:50px;tp:600;"
-                                        data-frame_1="tp:600;e:power1.inOut;st:1900;sp:500;sR:1900;"
-                                        data-frame_999="o:0;tp:600;e:nothing;st:w;sR:2600;"
-                                        style="z-index:7;font-family:'';"
-                                        ><a
-                                            href="#"
-                                            class="button bordered icon_right"
-                                            >Nhận báo giá<i
-                                                class="fa fa-chevron-right"
-                                            ></i
-                                        ></a> </rs-layer
-                                    ><!--
--->
-                                </rs-slide>
-                                <rs-slide
-                                    style="position: absolute;"
-                                    data-key="rs-18"
-                                    data-title="Slide"
-                                    data-duration="5000"
-                                    data-in="prst:rndany;o:0;x:100%;"
-                                >
-                                    <img
-                                        decoding="async"
-                                        src="/images/dummy.png"
-                                        alt="Slide"
-                                        title="home"
-                                        class="rev-slidebg tp-rs-img rs-lazyload"
-                                        data-lazyload="/images/transparent.png"
-                                        data-bg="p:center top;c:#002a52;"
-                                        data-no-retina
-                                    />
-                                    <!--
---><rs-layer
-                                        id="slider-1-slide-18-layer-7"
-                                        data-type="image"
-                                        data-rsp_ch="on"
-                                        data-xy="y:b;yo:-179px;"
-                                        data-text="l:22;a:inherit;"
-                                        data-dim="w:1229px;h:553px;"
-                                        data-frame_0="y:50px;tp:600;"
-                                        data-frame_1="tp:600;e:power1.inOut;st:2600;sp:500;sR:2600;"
-                                        data-frame_999="o:0;tp:600;e:nothing;st:w;sR:1900;"
-                                        style="z-index:5;"
-                                        ><img
-                                            decoding="async"
-                                            src="/images/dummy.png"
-                                            alt=""
-                                            class="tp-rs-img rs-lazyload"
-                                            width="1229"
-                                            height="553"
-                                            data-lazyload="/images/slide2.png"
-                                            data-no-retina
-                                        /> </rs-layer
-                                    ><!--
+                        $(document).ready(function () {
+                            stmSpacing();
+                        });
 
---><rs-layer
-                                        id="slider-1-slide-18-layer-1"
-                                        data-type="text"
-                                        data-color="rgba(255,255,255,1)"
-                                        data-rsp_ch="on"
-                                        data-xy="x:c;xo:11px;y:c;yo:-63px;"
-                                        data-text="l:22;a:center;"
-                                        data-frame_0="y:50px;tp:600;"
-                                        data-frame_1="tp:600;e:power1.inOut;st:1500;sp:500;sR:1500;"
-                                        data-frame_999="o:0;tp:600;e:nothing;st:w;sR:3000;"
-                                        style="z-index:6;font-family:'';"
-                                    >
-                                        <div class="consulting-rev-title-2">
-                                            <mark
-                                                >Nền tảng web vững chắc cho
-                                                chiến lược dài hạn</mark
-                                            >
-                                        </div> </rs-layer
-                                    ><!--
+                        $(window).resize(function () {
+                            stmSpacing();
+                        });
 
---><rs-layer
-                                        id="slider-1-slide-18-layer-4"
-                                        data-type="text"
-                                        data-color="rgba(255,255,255,1)"
-                                        data-rsp_ch="on"
-                                        data-xy="x:c;xo:17px;y:c;yo:12px;"
-                                        data-text="l:22;"
-                                        data-frame_0="y:50px;tp:600;"
-                                        data-frame_1="tp:600;e:power1.inOut;st:1900;sp:500;sR:1900;"
-                                        data-frame_999="o:0;tp:600;e:nothing;st:w;sR:2600;"
-                                        style="z-index:7;font-family:'';"
-                                        ><a
-                                            href="#"
-                                            class="button theme_style_3 bordered icon_right"
-                                            >Nhận báo giá<i
-                                                class="fa fa-chevron-right"
-                                            ></i
-                                        ></a> </rs-layer
-                                    ><!--
--->
-                                </rs-slide>
-                            </rs-slides>
-                        </rs-module>
-
-                        <script>
-                            setREVStartSize({ c: 'rev_slider_1_1', rl: [1240, 1024, 768, 480], el: [], gw: [1230], gh: [416], type: 'standard', justify: '', layout: 'fullwidth', mh: "0" }); if (window.RS_MODULES !== undefined && window.RS_MODULES.modules !== undefined && window.RS_MODULES.modules["revslider11"] !== undefined) { window.RS_MODULES.modules["revslider11"].once = false; window.revapi1 = undefined; if (window.RS_MODULES.checkMinimal !== undefined) window.RS_MODULES.checkMinimal() }
-                        </script>
-                    </rs-module-wrap>
-                    <!-- END REVOLUTION SLIDER -->
+                    })(jQuery);
+                </script>
+                <div class="vc_custom_heading text_align_center title_no_stripe">
+                    <h2 style="text-align: center" class="consulting-custom-title">Giải pháp website linh hoạt – Phù hợp
+                        mọi quy mô doanh nghiệp</h2>
                 </div>
+                <div class="wpb_text_column wpb_content_element">
+                    <div class="wpb_wrapper">
+                        <p style="font-size: 16px; text-align: center;">Chúng tôi cung cấp các gói thiết kế website được
+                            xây dựng dựa trên nhu cầu thực tế của doanh nghiệp, từ website giới thiệu nhanh gọn đến giải
+                            pháp web tùy chỉnh chuyên sâu.
+                            Mỗi gói dịch vụ đều được tối ưu về hiệu quả, trải nghiệm người dùng và khả năng mở rộng,
+                            giúp doanh nghiệp sở hữu một nền tảng web chuyên nghiệp – ổn định – sẵn sàng tăng trưởng với
+                            chi phí minh bạch và hợp lý.</p>
+
+                    </div>
+                </div>
+                <div class="stm-spacing" id="stm-spacing-6902586f34d62" style="height: 30px;"></div>
+                <script>
+                    (function ($) {
+                        "use strict";
+                        var spacingID = 'stm-spacing-6902586f34d62',
+                            lgSpacing = '30',
+                            mdSpacing = '30',
+                            smSpacing = '30',
+                            xsSpacing = '30';
+
+                        function stmSpacing() {
+                            if (window.matchMedia("(min-width: 1200px)").matches && lgSpacing) {
+                                $('#' + spacingID).css("height", lgSpacing);
+                            } else if (window.matchMedia("(max-width: 1199px) and (min-width: 992px )").matches && mdSpacing) {
+                                $('#' + spacingID).css("height", mdSpacing);
+                            } else if (window.matchMedia("(max-width: 991px) and (min-width: 768px )").matches && smSpacing) {
+                                $('#' + spacingID).css("height", smSpacing);
+                            } else if (window.matchMedia("(max-width: 767px)").matches && xsSpacing) {
+                                $('#' + spacingID).css("height", xsSpacing);
+                            } else {
+                                $('#' + spacingID).css("height", "");
+                            }
+                        }
+
+                        $(document).ready(function () {
+                            stmSpacing();
+                        });
+
+                        $(window).resize(function () {
+                            stmSpacing();
+                        });
+
+                    })(jQuery);
+                </script>
             </div>
         </div>
     </div>
-</div>
-
-                        <div data-vc-full-width="true" data-vc-full-width-temp="true" data-vc-full-width-init="false"
-    class="vc_row wpb_row vc_row-fluid third_bg_color">
-    <div class="wpb_column vc_column_container vc_col-sm-12">
+    <div class="wpb_column vc_column_container vc_col-sm-2">
+        <div class="vc_column-inner ">
+            <div class="wpb_wrapper"></div>
+        </div>
+    </div>
+    <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4">
         <div class="vc_column-inner ">
             <div class="wpb_wrapper">
-                <section class="vc_cta3-container">
-                    <div
-                        class="vc_general vc_cta3 third_bg_color vc_cta3-style-flat vc_cta3-shape-square vc_cta3-align-left vc_cta3-color-classic vc_cta3-icon-size-md vc_cta3-actions-right style=""">
-                        <div class="vc_cta3_content-container">
-                            <div class="vc_cta3-content">
-                                <header class="vc_cta3-content-header">
-                                    <div class="vc_custom_heading base_font_color">
-                                        <h2 style="font-size: 20px;line-height: 24px" class="consulting-custom-title">
-                                            Bạn đang tìm kiếm dịch vụ thiết kế website?</h2>
-                                    </div>
-                                </header>
-                            </div>
-                            <div class="vc_cta3-actions">
-                                <div class="vc_btn3-container vc_btn3-right vc_do_btn">
-                                    <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-flat vc_btn3-icon-right vc_btn3-color-theme_style_2"
-                                        href="#" title="">Nhận báo giá miễn phí <i
-                                            class="vc_btn3-icon fa fa-chevron-right"></i></a>
+                <div class="stm_pricing_plan_unit style_3">
+                    <div class="stm_pricing_plan ">
+                        <div class="top text-center">
+                            <div class="inner">
+                                <div class="title">STARTER</div>
+                                <div class="price">
+                                    <span class="heading_font">3.900.000đ</span>
                                 </div>
+                                <div class="subtitle">Website giới thiệu chuyên nghiệp – triển khai nhanh – chi phí tối
+                                    ưu</div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-</div>
-                        <div class="vc_row-full-width vc_clearfix"></div>
-                        <div class="vc_row wpb_row vc_row-fluid vc_custom_1451043728133">
-    <div class="wpb_column vc_column_container vc_col-sm-12">
-        <div class="vc_column-inner ">
-            <div class="wpb_wrapper">
-                <div class="vc_custom_heading base_font_color text_align_center">
-                    <h2 style="font-size: 45px;line-height: 60px;text-align: center" class="consulting-custom-title">
-                        Dịch vụ của chúng tôi</h2>
-                </div>
-                <div class="stm_news ">
-                    <ul class="news_list posts_per_row_4">
-                        <li>
-                            <div class="post_inner">
-                                <div class="image">
-                                    <a href="#w1">
-                                        <img loading="lazy" decoding="async" width="350" height="250"
-                                            src="/images/n3-350x250.png"
-                                            class="attachment-consulting-image-350x250-croped" alt="" title="n3"
-                                            srcset="/images/n3-350x250.png 350w, /images/n3-300x214.png 300w, /images/n3-1024x732.png 1024w, /images/n3-1536x1097.png 1536w, /images/n3-255x182.png 255w, /images/n3-900x643.png 900w, /images/n3-356x254.png 356w, /images/n3.png 1600w"
-                                            sizes="(max-width: 350px) 100vw, 350px" />
-                                    </a>
-                                </div>
-                                <div class="stm_news_unit-block">
-                                    <h5 class="no_stripe"><a href="#">Thiết kế website</a></h5>
-                                    <div class="services-desc">
-                                        <p>Website chuẩn SEO, tối ưu hóa cho Google, tối ưu hóa cho người dùng.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        <div class="content">
+                            <ul>
+                                <li>Website 3–5 trang (Trang chủ, Giới thiệu, Dịch vụ, Liên hệ, Tin tức cơ bản)</li>
+                                <li>Sử dụng template cao cấp có sẵn (đã tối ưu UX/UI)</li>
+                                <li>Chuẩn responsive (Desktop / Tablet / Mobile)</li>
+                                <li>Chuẩn SEO cơ bản (meta title, description, sitemap)</li>
+                                <li>Form liên hệ gửi email</li>
+                                <li>Tốc độ tải tốt, bảo mật cao</li>
+                                <li>Hỗ trợ kỹ thuật 3 tháng sau bàn giao</li>
+                                <li>Miễn phí tên miền .com/.net/.org 1 năm</li>
+                                <li>Tặng hosting 1 năm</li>
+                                <li>Thời gian hoàn thành: 3-5 ngày</li>
+                            </ul>
 
-                        <li>
-                            <div class="post_inner">
-                                <div class="image">
-                                    <a href="#w2">
-                                        <img loading="lazy" decoding="async" width="350" height="250"
-                                            src="/images/n4-350x250.png"
-                                            class="attachment-consulting-image-350x250-croped" alt="" title="n4"
-                                            srcset="/images/n4-350x250.png 350w, /images/n4-300x214.png 300w, /images/n4-1024x732.png 1024w, /images/n4-1536x1097.png 1536w, /images/n4-255x182.png 255w, /images/n4-900x643.png 900w, /images/n4-356x254.png 356w, /images/n4.png 1600w"
-                                            sizes="(max-width: 350px) 100vw, 350px" />
-                                    </a>
-                                </div>
-                                <div class="stm_news_unit-block">
-                                    <h5 class="no_stripe"><a href="#">Quản trị website</a></h5>
-                                    <div class="services-desc">
-                                        <p>Giải pháp chăm sóc website, bảo trì website, cập nhật website.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="post_inner">
-                                <div class="image">
-                                    <a href="#w3">
-                                        <img loading="lazy" decoding="async" width="350" height="250"
-                                            src="/images/n7-350x250.png"
-                                            class="attachment-consulting-image-350x250-croped" alt="" title="n7"
-                                            srcset="/images/n7-350x250.png 350w, /images/n7-300x214.png 300w, /images/n7-1024x732.png 1024w, /images/n7-1536x1097.png 1536w, /images/n7-255x182.png 255w, /images/n7-900x643.png 900w, /images/n7-356x254.png 356w, /images/n7.png 1600w"
-                                            sizes="(max-width: 350px) 100vw, 350px" />
-                                    </a>
-                                </div>
-                                <div class="stm_news_unit-block">
-                                    <h5 class="no_stripe"><a href="#">Quảng cáo website</a></h5>
-                                    <div class="services-desc">
-                                        <p>Quảng cáo Google, Facebook, Instagram, Tiktok, ...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="post_inner">
-                                <div class="image">
-                                    <a href="#" title="Domain/Hosting">
-                                        <img loading="lazy" decoding="async" width="350" height="250"
-                                            src="/images/n5-350x250.png"
-                                            class="attachment-consulting-image-350x250-croped" alt="Domain/Hosting"
-                                            srcset="/images/n5-350x250.png 350w, /images/n5-300x214.png 300w, /images/n5-1024x732.png 1024w, /images/n5-1536x1097.png 1536w, /images/n5-255x182.png 255w, /images/n5-900x643.png 900w, /images/n5-356x254.png 356w, /images/n5.png 1600w"
-                                            sizes="(max-width: 350px) 100vw, 350px" />
-                                    </a>
-                                </div>
-                                <div class="stm_news_unit-block">
-                                    <h5 class="no_stripe"><a href="#">Domain/Hosting</a></h5>
-                                    <div class="services-desc">
-                                        <p>Giải pháp domain/hosting, tư vấn miễn phí, hỗ trợ 24/7.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                        <div class="vc_row-full-width vc_clearfix"></div>
-                        <section
-    id="solution-page"
-    class="elementor-section elementor-top-section elementor-element elementor-element-837a24b elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-    data-id="837a24b"
-    data-element_type="section"
->
-    <div class="elementor-container elementor-column-gap-default">
-        <div
-            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-769976d"
-            data-id="769976d"
-            data-element_type="column"
-        >
-            <div class="elementor-widget-wrap elementor-element-populated">
-                <div class="vc_custom_heading base_font_color text_align_center">
-                    <h2 style="font-size: 45px;line-height: 60px;text-align: center" class="consulting-custom-title">
-                        Giải pháp chuyên biệt cho từng ngành nghề</h2>
-                </div>
-                <div
-                    class="elementor-element elementor-element-aa6334b elementor-widget elementor-widget-stm_portfolio"
-                    data-id="aa6334b"
-                    data-element_type="widget"
-                    data-widget_type="stm_portfolio.default"
-                >
-                    <div class="elementor-widget-container">
-                        <div class="consulting_portfolio_box ">
-                            <div
-                                class="consulting_portfolio_grid consulting_elementor_portfolio style_3 hover_zoom column-3"
-                            >
-                                <div
-                                    class="portfolio_item all financial-services"
-                                >
-                                    <a
-                                        href="#1"
-                                        class="portfolio_link"
-                                    >
-                                        <span class="portfolio_item_thumbnail">
-                                            <img
-                                                fetchpriority="high"
-                                                decoding="async"
-                                                width="848"
-                                                height="566"
-                                                src="/images/ss.webp"
-                                                class="attachment-large"
-                                                alt=""
-                                                title="portfolio_inner_1"
-                                            />
-                                        </span>
-
-                                        <span class="portfolio_info">
-                                            Thiết kế & thi công nội thất
-                                            <span class="portfolio_category"
-                                                >Website là showroom 24/7 giúp bạn trình diễn các dự án thực tế. Thay vì gửi file ảnh rời rạc, một thư viện dự án chuyên nghiệp sẽ xây dựng niềm tin tuyệt đối, giúp bạn chinh phục những hợp đồng giá trị cao.</span
-                                            >
-                                        </span>
-                                    </a>
-                                </div>
-                                <div
-                                    class="portfolio_item all advanced-analytics"
-                                >
-                                    <a
-                                        href="#2"
-                                        class="portfolio_link"
-                                    >
-                                        <span class="portfolio_item_thumbnail">
-                                            <img
-                                                decoding="async"
-                                                width="700"
-                                                height="500"
-                                                src="/images/ss2.jpg"
-                                                class="attachment-large"
-                                                alt=""
-                                                title="portfolio-grid1"
-                                            />
-                                        </span>
-
-                                        <span class="portfolio_info">
-                                            Phòng khám nha khoa & Thẩm mỹ
-                                            <span class="portfolio_category"
-                                            >Xóa bỏ tình trạng khách hàng chờ đợi hoặc bỏ lỡ lịch hẹn. Hệ thống đặt lịch trực tuyến kết hợp với trang giới thiệu dịch vụ chuẩn y kho giúp tăng sư uy tín, tối ưu quy trình vận hành và chăm sóc khách hàng tự động.
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div
-                                    class="portfolio_item all financial-services"
-                                >
-                                    <a
-                                        href="#3"
-                                        class="portfolio_link"
-                                    >
-                                        <span class="portfolio_item_thumbnail">
-                                            <img
-                                                loading="lazy"
-                                                decoding="async"
-                                                width="700"
-                                                height="500"
-                                                src="/images/ss3.jpg"
-                                                class="attachment-large"
-                                                alt=""
-                                                title="portfolio-grid2"
-                                            />
-                                        </span>
-
-                                        <span class="portfolio_info">
-                                            Kinh doanh bất động sản
-                                            <span class="portfolio_category"
-                                                >Sở hữu phễu thu thập khách hàng tiềm năng chuyên nghiệp cho từng dự án. Website giúp bạn cung cấp thông tin minh bạch, bản đồ vị trí và bảng giá cập nhật, giúp sàng lọc khách hàng thực sự. quan tâm trước khi bạn nhấc máy tư vấn.</span
-                                            >
-                                        </span>
-                                    </a>
-                                </div>
-                                <div
-                                    class="portfolio_item all surface-transport-logistics"
-                                >
-                                    <a
-                                        href="#4"
-                                        class="portfolio_link"
-                                    >
-                                        <span class="portfolio_item_thumbnail">
-                                            <img
-                                                loading="lazy"
-                                                decoding="async"
-                                                width="621"
-                                                height="960"
-                                                src="/images/portfolio-grid4.jpg"
-                                                class="attachment-large"
-                                                alt=""
-                                                title="portfolio-grid4"
-                                            />
-                                        </span>
-
-                                        <span class="portfolio_info">
-                                            Dịch vụ Luật & Tư vấn pháp lý
-                                            <span class="portfolio_category"
-                                                >Trong ngành luật, sự tin tưởng là cốt lõi. Website chuyên nghiệp khẳng định vị thế chuyên gia, giúp khách hàng dễ dàng tìm thấy giải pháp cho vấn đề của họ và kết nối với bạn ngay lập tức qua hệ thống bảo mật thông tin.</span
-                                            >
-                                        </span>
-                                    </a>
-                                </div>
-                                <div
-                                    class="portfolio_item all financial-services"
-                                >
-                                    <a
-                                        href="#5"
-                                        class="portfolio_link"
-                                        title="Nhà hàng & Quán cà phê cao cấp"
-                                    >
-                                        <span class="portfolio_item_thumbnail">
-                                            <img
-                                                loading="lazy"
-                                                decoding="async"
-                                                width="1024"
-                                                height="351"
-                                                src="/images/restaurant.webp"
-                                                class="attachment-large"
-                                                alt="Nhà hàng & Quán cà phê cao cấp"
-                                            />
-                                        </span>
-
-                                        <span class="portfolio_info">
-                                            Nhà hàng & Quán cà phê cao cấp
-                                            <span class="portfolio_category"
-                                                >Website giúp bạn thoát khỏi sự phụ thuộc vào các ứng dụng giao hàng tốn phí chiết khấu cao. Tích hợp thực đơn điện tử, đặt bàn trực tuyến và quảng bá không gian giúp thu hút thực khách và giữ chân kháchh hàng trung thành hiệu quả.</span
-                                            >
-                                        </span>
-                                    </a>
-                                </div>
-                                <div
-                                    class="portfolio_item all advanced-analytics"
-                                >
-                                    <a
-                                        href="#6"
-                                        class="portfolio_link"
-                                        title="Trung tâm Đào tạo & Giáo dục"
-                                    >
-                                        <span class="portfolio_item_thumbnail">
-                                            <img
-                                                loading="lazy"
-                                                decoding="async"
-                                                width="700"
-                                                height="500"
-                                                src="/images/education.jpg"
-                                                class="attachment-large"
-                                                alt="Trung tâm Đào tạo & Giáo dục"
-                                                title="portfolio-grid6"
-                                            />
-                                        </span>
-
-                                        <span class="portfolio_info">
-                                            Trung tâm Đào tạo & Giáo dục
-                                            <span class="portfolio_category"
-                                                >Số hóa quy trình tuyển sinh và quản lý học viên. Website giúp bạn giới thiệu khóa học, đội ngũ giảng viên và cảm nhận học viên một cách hệ thống, tạo dựng thương hiệu giáo dục uy tín và chuyên nghiệp trong mắt phụ huynh.</span
-                                            >
-                                        </span>
-                                    </a>
-                                </div>
-                                <div
-                                    class="portfolio_item all advanced-analytics"
-                                >
-                                    <a
-                                        href="#7"
-                                        class="portfolio_link"
-                                        title="Dịch vụ Sửa chữa & Kỹ thuật tại nhà"
-                                    >
-                                        <span class="portfolio_item_thumbnail">
-                                            <img
-                                                loading="lazy"
-                                                decoding="async"
-                                                width="700"
-                                                height="500"
-                                                src="/images/repair.jpg"
-                                                class="attachment-large"
-                                                alt="Dịch vụ Sửa chữa & Kỹ thuật tại nhà"
-                                                title="portfolio-grid7"
-                                            />
-                                        </span>
-
-                                        <span class="portfolio_info">
-                                            Dịch vụ Sửa chữa & Kỹ thuật tại nhà
-                                            <span class="portfolio_category"
-                                                >Khách hàng luôn tìm kiếm sự nhanh chóng khi gặp sự cố. Website tối ưu SEO giúp thương hiệu của bạn xuất hiện đầu tiên trên Google, đi kèm nút gọi khẩn cấp và bảng giá minh bạch để chốt đơn ngay khi khách hàng cần.</span
-                                            >
-                                        </span>
-                                    </a>
-                                </div>
-                                <div
-                                    class="portfolio_item all advanced-analytics"
-                                >
-                                    <a
-                                        href="#8"
-                                        class="portfolio_link"
-                                        title="Khách sạn & Homestay địa phương"
-                                    >
-                                        <span class="portfolio_item_thumbnail">
-                                            <img
-                                                loading="lazy"
-                                                decoding="async"
-                                                width="700"
-                                                height="500"
-                                                src="/images/hotel.jpg"
-                                                class="attachment-large"
-                                                alt="Khách sạn & Homestay địa phương"
-                                            />
-                                        </span>
-
-                                        <span class="portfolio_info">
-                                            Khách sạn & Homestay địa phương
-                                            <span class="portfolio_category"
-                                                >Chủ động hoàn toàn trong việc quản lý phòng trống và thanh toán mà không mất hoa hồng cho bên thứ ba. Website giúp bạn kể câu chuyện thương hiệu qua hình ảnh lung linh, thúc đẩy khách hàng đặt phòng trực tiếp để nhận ưu đãi.</span
-                                            >
-                                        </span>
-                                    </a>
-                                </div>
-                                <div
-                                    class="portfolio_item all advanced-analytics"
-                                >
-                                    <a
-                                        href="#9"
-                                        class="portfolio_link"
-                                        title="Trung tâm Spa & Wellness"
-                                    >
-                                        <span class="portfolio_item_thumbnail">
-                                            <img
-                                                loading="lazy"
-                                                decoding="async"
-                                                width="700"
-                                                height="500"
-                                                src="/images/spa.jpg"
-                                                class="attachment-large"
-                                                alt="Trung tâm Spa & Wellness"
-                                            />
-                                        </span>
-
-                                        <span class="portfolio_info">
-                                            9. Trung tâm Spa & Wellness
-                                            <span class="portfolio_category"
-                                                >​Nâng tầm trải nghiệm khách hàng ngay từ khâu tìm kiếm. Website không chỉ là nơi giới thiệu liệu trình mà còn là công cụ quản lý lịch hẹn thông minh, giúp bạn điều phối nhân viên hiệu quả và giảm thiểu tối đa tình trạng khách quên lịch.</span
-                                            >
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
+                            <!-- <div class="stm_pricing_btn">
+                                <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-outline vc_btn3-block vc_btn3-icon-left vc_btn3-color-theme_style_1"
+                                    href="#" title="Get now">Get now<i class="fa fa-chevron-left vc_btn3-icon"></i></a>
+                            </div> -->
                         </div>
                     </div>
                 </div>
+                <div class="stm-spacing" id="stm-spacing-6902586f35456" style="height: 0px;"></div>
+                <script>
+                    (function ($) {
+                        "use strict";
+                        var spacingID = 'stm-spacing-6902586f35456',
+                            lgSpacing = '0',
+                            mdSpacing = '70',
+                            smSpacing = '70',
+                            xsSpacing = '70';
+
+                        function stmSpacing() {
+                            if (window.matchMedia("(min-width: 1200px)").matches && lgSpacing) {
+                                $('#' + spacingID).css("height", lgSpacing);
+                            } else if (window.matchMedia("(max-width: 1199px) and (min-width: 992px )").matches && mdSpacing) {
+                                $('#' + spacingID).css("height", mdSpacing);
+                            } else if (window.matchMedia("(max-width: 991px) and (min-width: 768px )").matches && smSpacing) {
+                                $('#' + spacingID).css("height", smSpacing);
+                            } else if (window.matchMedia("(max-width: 767px)").matches && xsSpacing) {
+                                $('#' + spacingID).css("height", xsSpacing);
+                            } else {
+                                $('#' + spacingID).css("height", "");
+                            }
+                        }
+
+                        $(document).ready(function () {
+                            stmSpacing();
+                        });
+
+                        $(window).resize(function () {
+                            stmSpacing();
+                        });
+
+                    })(jQuery);
+                </script>
             </div>
         </div>
     </div>
-</section>
+    <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4">
+        <div class="vc_column-inner ">
+            <div class="wpb_wrapper">
+                <div class="stm_pricing_plan_unit style_3">
+                    <div class="stm_pricing_plan has_status">
+                        <div class="top text-center">
+                            <div class="inner">
+                                <div class="stm_label">
+                                    <span>PHỔ BIẾN</span>
+                                </div>
+                                <div class="title">BUSSINESS</div>
+                                <div class="price">
+                                    <span class="heading_font">7.900.000đ</span>
+                                </div>
+                                <div class="subtitle">Website chuẩn thương hiệu – tối ưu chuyển đổi – dễ mở rộng</div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li><strong>Bao gồm các tính năng của gói STARTER, cộng thêm:</strong></li>
+                                <li>Website 6–12 trang</li>
+                                <li>Thiết kế UI theo màu sắc & nhận diện thương hiệu</li>
+                                <li>Chuẩn responsive (Desktop / Tablet / Mobile)</li>
+                                <li>Chuẩn SEO nâng cao (meta title, description, sitemap, schema cơ bản)</li>
+                                <li>Form liên hệ gửi email + tích hợp chatbot cơ bản</li>
+                                <li>Tối ưu tốc độ & trải nghiệm người dùng</li>
+                                <li>Hỗ trợ kỹ thuật 1 năm sau bàn giao</li>
+                                <li>Hỗ trợ đa ngôn ngữ (nếu cần)</li>
+                                <li>Miễn phí tên miền .com/.net/.org 1 năm</li>
+                                <li>Tặng hosting 1 năm</li>
+                                <li>Thời gian hoàn thành: 7-10 ngày</li>
+                            </ul>
 
+                            <!-- <div class="stm_pricing_btn">
+                                <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-outline vc_btn3-block vc_btn3-icon-left vc_btn3-color-theme_style_1"
+                                    href="#" title="Get now">Đăng ký<i class="fa fa-chevron-left vc_btn3-icon"></i></a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="stm-spacing" id="stm-spacing-6902586f35865" style="height: 0px;"></div>
+                <script>
+                    (function ($) {
+                        "use strict";
+                        var spacingID = 'stm-spacing-6902586f35865',
+                            lgSpacing = '0',
+                            mdSpacing = '70',
+                            smSpacing = '70',
+                            xsSpacing = '70';
+
+                        function stmSpacing() {
+                            if (window.matchMedia("(min-width: 1200px)").matches && lgSpacing) {
+                                $('#' + spacingID).css("height", lgSpacing);
+                            } else if (window.matchMedia("(max-width: 1199px) and (min-width: 992px )").matches && mdSpacing) {
+                                $('#' + spacingID).css("height", mdSpacing);
+                            } else if (window.matchMedia("(max-width: 991px) and (min-width: 768px )").matches && smSpacing) {
+                                $('#' + spacingID).css("height", smSpacing);
+                            } else if (window.matchMedia("(max-width: 767px)").matches && xsSpacing) {
+                                $('#' + spacingID).css("height", xsSpacing);
+                            } else {
+                                $('#' + spacingID).css("height", "");
+                            }
+                        }
+
+                        $(document).ready(function () {
+                            stmSpacing();
+                        });
+
+                        $(window).resize(function () {
+                            stmSpacing();
+                        });
+
+                    })(jQuery);
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4">
+        <div class="vc_column-inner ">
+            <div class="wpb_wrapper">
+                <div class="stm_pricing_plan_unit style_3">
+                    <div class="stm_pricing_plan ">
+                        <div class="top text-center">
+                            <div class="inner">
+                                <div class="title">CUSTOM</div>
+                                <div class="price">
+                                    <span class="heading_font">LIÊN HỆ</span>
+                                </div>
+                                <div class="subtitle">Không chỉ là website – mà là giải pháp vận hành & tăng trưởng
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>Phân tích yêu cầu & tư vấn kiến trúc hệ thống</li>
+                                <li>Thiết kế UI/UX theo hành vi người dùng</li>
+                                <li>Phát triển tính năng theo yêu cầu</li>
+                                <li>Hệ thống quản trị riêng</li>
+                                <li>Phân quyền, bảo mật nâng cao</li>
+                                <li>Dễ mở rộng, bảo trì dài hạn</li>
+                            </ul>
+
+                            <!-- <div class="stm_pricing_btn">
+                                <a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-outline vc_btn3-block vc_btn3-icon-left vc_btn3-color-theme_style_1"
+                                    href="#" title="Get now">Get now<i class="fa fa-chevron-left vc_btn3-icon"></i></a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="stm-spacing" id="stm-spacing-6902586f35c63" style="height: 0px;"></div>
+                <script>
+                    (function ($) {
+                        "use strict";
+                        var spacingID = 'stm-spacing-6902586f35c63',
+                            lgSpacing = '0',
+                            mdSpacing = '70',
+                            smSpacing = '70',
+                            xsSpacing = '70';
+
+                        function stmSpacing() {
+                            if (window.matchMedia("(min-width: 1200px)").matches && lgSpacing) {
+                                $('#' + spacingID).css("height", lgSpacing);
+                            } else if (window.matchMedia("(max-width: 1199px) and (min-width: 992px )").matches && mdSpacing) {
+                                $('#' + spacingID).css("height", mdSpacing);
+                            } else if (window.matchMedia("(max-width: 991px) and (min-width: 768px )").matches && smSpacing) {
+                                $('#' + spacingID).css("height", smSpacing);
+                            } else if (window.matchMedia("(max-width: 767px)").matches && xsSpacing) {
+                                $('#' + spacingID).css("height", xsSpacing);
+                            } else {
+                                $('#' + spacingID).css("height", "");
+                            }
+                        }
+
+                        $(document).ready(function () {
+                            stmSpacing();
+                        });
+
+                        $(window).resize(function () {
+                            stmSpacing();
+                        });
+
+                    })(jQuery);
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+        <div class="vc_column-inner ">
+            <div class="wpb_wrapper">
+                <div class="stm-spacing" id="stm-spacing-6902586f35e84" style="height: 100px;"></div>
+                <script>
+                    (function ($) {
+                        "use strict";
+                        var spacingID = 'stm-spacing-6902586f35e84',
+                            lgSpacing = '100',
+                            mdSpacing = '100',
+                            smSpacing = '0',
+                            xsSpacing = '0';
+
+                        function stmSpacing() {
+                            if (window.matchMedia("(min-width: 1200px)").matches && lgSpacing) {
+                                $('#' + spacingID).css("height", lgSpacing);
+                            } else if (window.matchMedia("(max-width: 1199px) and (min-width: 992px )").matches && mdSpacing) {
+                                $('#' + spacingID).css("height", mdSpacing);
+                            } else if (window.matchMedia("(max-width: 991px) and (min-width: 768px )").matches && smSpacing) {
+                                $('#' + spacingID).css("height", smSpacing);
+                            } else if (window.matchMedia("(max-width: 767px)").matches && xsSpacing) {
+                                $('#' + spacingID).css("height", xsSpacing);
+                            } else {
+                                $('#' + spacingID).css("height", "");
+                            }
+                        }
+
+                        $(document).ready(function () {
+                            stmSpacing();
+                        });
+
+                        $(window).resize(function () {
+                            stmSpacing();
+                        });
+
+                    })(jQuery);
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
                         <div class="vc_row-full-width vc_clearfix"></div>
                     </div>
                 </div>

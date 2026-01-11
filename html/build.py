@@ -50,15 +50,9 @@ def process_includes(html, partials_dir, included_files=None, max_depth=10, curr
     html = include_pattern.sub(replace_include, html)
     return html
 
-def build_html():
-    """Build HTML từ template và partials"""
-    base_dir = Path(__file__).parent
-    partials_dir = base_dir / 'partials'
-    templates_dir = base_dir / 'templates'
-    output_dir = base_dir
-
-    # Đọc template
-    template_path = templates_dir / 'index.template.html'
+def build_page(template_name, output_name, partials_dir, templates_dir, output_dir):
+    """Build một page từ template"""
+    template_path = templates_dir / template_name
     if not template_path.exists():
         print(f'❌ Template file not found: {template_path}')
         return False
@@ -70,12 +64,41 @@ def build_html():
     html = process_includes(html, partials_dir, included_files)
 
     # Ghi file output
-    output_path = output_dir / 'index.html'
+    output_path = output_dir / output_name
     output_path.write_text(html, encoding='utf-8')
 
-    print(f'\n✅ Built {output_path} successfully!')
+    print(f'✅ Built {output_name} successfully!')
     print(f'   Included {len(included_files)} partial(s)')
     return True
+
+def build_html():
+    """Build tất cả HTML từ template và partials"""
+    base_dir = Path(__file__).parent
+    partials_dir = base_dir / 'partials'
+    templates_dir = base_dir / 'templates'
+    output_dir = base_dir
+
+    # Danh sách các pages cần build
+    # Format: (template_file, output_file)
+    pages = [
+        ('index.template.html', 'index.html'),
+        ('pricing.template.html', 'pricing.html'),
+    ]
+
+    print('=' * 60)
+    print('Building HTML pages...')
+    print('=' * 60)
+
+    success_count = 0
+    for template_name, output_name in pages:
+        print(f'\n📄 Building {output_name}...')
+        if build_page(template_name, output_name, partials_dir, templates_dir, output_dir):
+            success_count += 1
+
+    print('\n' + '=' * 60)
+    print(f'✅ Build completed: {success_count}/{len(pages)} pages built successfully')
+    print('=' * 60)
+    return success_count == len(pages)
 
 if __name__ == '__main__':
     build_html()
